@@ -65,8 +65,9 @@ Stage: build
     DEBIAN_FRONTEND=noninteractive apt install -y ros-noetic-robot-localization
     DEBIAN_FRONTEND=noninteractive apt install -y ros-noetic-robot-state-publisher
 
-    DEBIAN_FRONTEND=noninteractive add-apt-repository ppa:borglab/gtsam-release-4.0
-    DEBIAN_FRONTEND=noninteractive apt install -y libgtsam-dev libgtsam-unstable-dev
+    # DEBIAN_FRONTEND=noninteractive add-apt-repository ppa:borglab/gtsam-release-4.0
+    # DEBIAN_FRONTEND=noninteractive apt install -y libgtsam-dev libgtsam-unstable-dev
+    DEBIAN_FRONTEND=noninteractive apt install -y ros-noetic-gtsam
     DEBIAN_FRONTEND=noninteractive apt install -y software-properties-common
     DEBIAN_FRONTEND=noninteractive apt install -y ros-noetic-libg2o
     DEBIAN_FRONTEND=noninteractive apt install -y libomp-dev
