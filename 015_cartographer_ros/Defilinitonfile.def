@@ -73,14 +73,15 @@ Stage: build
     DEBIAN_FRONTEND=noninteractive apt install -y python3-wstool ninja-build stow
     DEBIAN_FRONTEND=noninteractive apt install -y libceres-dev liblua5.3-0 liblua5.3-dev
 
-    mkdir -p /cartgrapher_ws/src
-    cd /cartgrapher_ws/src
-    git clone https://github.com/cartographer-project/cartographer_ros.git
-
     mkdir -p /cartgrapher_ws/lib
     cd /cartgrapher_ws/lib
-    git clone https://github.com/cartographer-project/cartographer.git
-    cd /cartgrapher_ws/lib/cartographer/
+    # cd /cartgrapher_ws/src
+    # git clone https://github.com/cartographer-project/cartographer_ros.git
+
+    # mkdir -p /cartgrapher_ws/lib
+    # cd /cartgrapher_ws/lib
+    # git clone https://github.com/cartographer-project/cartographer.git
+    # cd /cartgrapher_ws/lib/cartographer/
 
     #### sh scripts/install_abseil.sh
     set -o errexit
