@@ -71,7 +71,7 @@ Stage: build
     # ROS noetic cartgrapher
     ############################################
     DEBIAN_FRONTEND=noninteractive apt install -y python3-wstool ninja-build stow
-    DEBIAN_FRONTEND=noninteractive apt install libceres-dev liblua5.3-0 liblua5.3-dev
+    DEBIAN_FRONTEND=noninteractive apt install -y libceres-dev liblua5.3-0 liblua5.3-dev
 
     mkdir -p /cartgrapher_ws/src
     cd /cartgrapher_ws/src
