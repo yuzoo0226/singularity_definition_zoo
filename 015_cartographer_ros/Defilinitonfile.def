@@ -71,15 +71,15 @@ Stage: build
     # ROS noetic cartgrapher
     ############################################
     DEBIAN_FRONTEND=noninteractive apt install -y python3-wstool ninja-build stow
+    DEBIAN_FRONTEND=noninteractive apt install libceres-dev liblua5.3-0 liblua5.3-dev
 
     mkdir -p /cartgrapher_ws/src
     cd /cartgrapher_ws/src
-
     git clone https://github.com/cartographer-project/cartographer_ros.git
-    git clone https://github.com/cartographer-project/cartographer.git
 
     mkdir -p /cartgrapher_ws/lib
     cd /cartgrapher_ws/lib
+    git clone https://github.com/cartographer-project/cartographer.git
     cd /cartgrapher_ws/lib/cartographer/
 
     #### sh scripts/install_abseil.sh
@@ -99,12 +99,9 @@ Stage: build
     ..
     ninja
 
-    # ninja install
-    # cd /usr/local/stow
-    # stow absl
-
-    # catkin build
-
+    ninja install
+    cd /usr/local/stow
+    stow absl
 
 %runscript
     ############################################
