@@ -75,7 +75,7 @@ Stage: build
     DEBIAN_FRONTEND=noninteractive apt install -y ros-noetic-rtcm-msgs
     DEBIAN_FRONTEND=noninteractive apt install -y ros-noetic-nmea-msgs
 
-    pip install open3d -y --ignore-install
+    pip install open3d --ignore-install
     ##################################
     # ndt_omp install form source
     #################################
