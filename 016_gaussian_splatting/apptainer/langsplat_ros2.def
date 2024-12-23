@@ -1,5 +1,5 @@
 Bootstrap: docker
-From: nvidia/cuda:12.2.2-cudnn8-devel-ubuntu22.04
+From: nvidia/cuda:11.8.0-cudnn8-devel-ubuntu22.04
 Stage: build
 
 %setup
@@ -47,16 +47,20 @@ Stage: build
     ln -sf /opt/conda/bin/python3 /usr/bin/python
 
     # install ros2-humble
-    # DEBIAN_FRONTEND=noninteractive apt update
-    # curl -sSL https://raw.githubusercontent.com/ros/rosdistro/master/ros.key -o /usr/share/keyrings/ros-archive-keyring.gpg
-    # # echo "deb [arch=$(dpkg --print-architecture) signed-by=/usr/share/keyrings/ros-archive-keyring.gpg] http://packages.ros.org/ros2/ubuntu $(. /etc/os-release && echo $UBUNTU_CODENAME) main" | sudo tee /etc/apt/sources.list.d/ros2.list > /dev/null
-    # # echo "deb [arch=$(dpkg --print-architecture) signed-by=/usr/share/keyrings/ros-archive-keyring.gpg] http://packages.ros.org/ros2/ubuntu $(source /etc/os-release && echo $UBUNTU_CODENAME) main" | tee /etc/apt/sources.list.d/ros2.list > /dev/null
-    # echo "deb [arch=$(dpkg --print-architecture) signed-by=/usr/share/keyrings/ros-archive-keyring.gpg] http://packages.ros.org/ros2/ubuntu $(. /etc/os-release && echo $UBUNTU_CODENAME) main" | tee /etc/apt/sources.list.d/ros2.list > /dev/null
-    # DEBIAN_FRONTEND=noninteractive apt update
-    # DEBIAN_FRONTEND=noninteractive apt install -y ros-humble-desktop
+    DEBIAN_FRONTEND=noninteractive apt update
+    curl -sSL https://raw.githubusercontent.com/ros/rosdistro/master/ros.key -o /usr/share/keyrings/ros-archive-keyring.gpg
+    # echo "deb [arch=$(dpkg --print-architecture) signed-by=/usr/share/keyrings/ros-archive-keyring.gpg] http://packages.ros.org/ros2/ubuntu $(. /etc/os-release && echo $UBUNTU_CODENAME) main" | sudo tee /etc/apt/sources.list.d/ros2.list > /dev/null
+    # echo "deb [arch=$(dpkg --print-architecture) signed-by=/usr/share/keyrings/ros-archive-keyring.gpg] http://packages.ros.org/ros2/ubuntu $(source /etc/os-release && echo $UBUNTU_CODENAME) main" | tee /etc/apt/sources.list.d/ros2.list > /dev/null
+    echo "deb [arch=$(dpkg --print-architecture) signed-by=/usr/share/keyrings/ros-archive-keyring.gpg] http://packages.ros.org/ros2/ubuntu $(. /etc/os-release && echo $UBUNTU_CODENAME) main" | tee /etc/apt/sources.list.d/ros2.list > /dev/null
+    DEBIAN_FRONTEND=noninteractive apt update
+    DEBIAN_FRONTEND=noninteractive apt install -y ros-humble-desktop
 
     python -m pip install tqdm
     python -m pip install -r requirements.txt
+    python -m pip install git+https://github.com/minghanqin/segment-anything-langsplat.git
+    python -m pip install torch==2.1.0 torchvision==0.16.0 torchaudio==2.1.0 --index-url https://download.pytorch.org/whl/cu118
+    python -m pip install git+https://github.com/minghanqin/langsplat-rasterization.git
+    python -m pip install open-clip-torch==2.29.0
 
 %runscript
     ############################################
