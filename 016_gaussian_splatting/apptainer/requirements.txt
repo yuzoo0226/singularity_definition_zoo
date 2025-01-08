@@ -12,3 +12,6 @@ matplotlib
 typing
 pathlib
 numpy==1.24.3
+
+scipy==1.13.1
+bitarray==3.0.0
