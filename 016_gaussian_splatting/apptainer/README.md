@@ -26,6 +26,7 @@ python -m pip install -e .
 
 - download the checkpoints of SAM Model (sam_vit_h_4b8939.pth) from [here](https://github.com/facebookresearch/segment-anything?tab=readme-ov-file#model-checkpoints) to `ckpts/.`
 - download test dataset form [here](https://drive.google.com/drive/folders/1kdV14Gu5nZX6WOPbccG7t7obP_aXkOuC?usp=sharing)
+- download opengaussian/langsplat dataset [here](https://github.com/yanmin-wu/OpenGaussian?tab=readme-ov-file#2-data-preparation)
 
 ## How to run
 
