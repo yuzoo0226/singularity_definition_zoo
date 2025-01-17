@@ -4,6 +4,7 @@
 
 - [LangSplatting](https://github.com/minghanqin/LangSplat)
 - [OpenGaussian](https://github.com/yanmin-wu/OpenGaussian)
+- [segAnyGaussian](https://github.com/Jumpat/SegAnyGAussians)
 
 ## テスト環境
 
