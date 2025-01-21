@@ -17,3 +17,5 @@ scipy==1.13.1
 bitarray==3.0.0
 dearpygui==2.0.0
 hdbscan==0.8.40
+icecream==2.1.4
+openai==1.59.9
