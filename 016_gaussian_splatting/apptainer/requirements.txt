@@ -19,3 +19,5 @@ dearpygui==2.0.0
 hdbscan==0.8.40
 icecream==2.1.4
 openai==1.59.9
+traitlets==5.9.0
+jupyter_server
