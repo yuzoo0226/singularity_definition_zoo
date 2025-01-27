@@ -57,10 +57,6 @@ Stage: build
     # DEBIAN_FRONTEND=noninteractive apt update
     # DEBIAN_FRONTEND=noninteractive apt install -y ros-humble-desktop
 
-    curl -fsSL https://packages.microsoft.com/keys/microsoft.asc | gpg --dearmor -o /usr/share/keyrings/vscode.gpg
-    echo deb [arch=amd64 signed-by=/usr/share/keyrings/vscode.gpg] https://packages.microsoft.com/repos/vscode stable main | tee /etc/apt/sources.list.d/vscode.list
-    DEBIAN_FRONTEND=noninteractive apt update && apt install -y apt install code
-
     DEBIAN_FRONTEND=noninteractive apt update && apt install -y qtbase5-dev qtchooser qt5-qmake qtbase5-dev-tools
     DEBIAN_FRONTEND=noninteractive apt update && apt install -y x11-apps
     DEBIAN_FRONTEND=noninteractive apt update && apt install -y jupyter-core jupyter-notebook
