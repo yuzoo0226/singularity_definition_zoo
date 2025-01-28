@@ -21,3 +21,4 @@ icecream==2.1.4
 openai==1.59.9
 traitlets==5.9.0
 jupyter_server
+mediapy==1.2.2
