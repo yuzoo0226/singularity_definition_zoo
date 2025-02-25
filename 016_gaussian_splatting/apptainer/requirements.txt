@@ -24,3 +24,4 @@ jupyter_server
 mediapy==1.2.2
 imageio
 pyopengl
+openai==1.63.2

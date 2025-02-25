@@ -17,3 +17,4 @@ openmim
 tqdm
 psutil
 dearpygui
+openai==1.63.2
