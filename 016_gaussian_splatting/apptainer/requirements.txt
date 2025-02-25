@@ -25,3 +25,4 @@ mediapy==1.2.2
 imageio
 pyopengl
 openai==1.63.2
+pytorch-metric-learning==2.8.1
