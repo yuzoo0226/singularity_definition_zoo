@@ -52,6 +52,11 @@ Stage: build
     DEBIAN_FRONTEND=noninteractive apt update && apt install -y x11-apps
     DEBIAN_FRONTEND=noninteractive apt update && apt install -y jupyter-core jupyter-notebook
 
+    DEBIAN_FRONTEND=noninteractive apt update && apt install -y libxcb-cursor0
+    DEBIAN_FRONTEND=noninteractive apt update && apt install -y libxcb-xinerama0 libxcb-icccm4 libxcb-image0 \
+        libxcb-keysyms1 libxcb-randr0 libxcb-render-util0 libxcb-shape0 \
+        libxcb-xfixes0 libxcb-sync1 libxcb-xinput0
+
     # 仮想環境のディレクトリを作成
     mkdir -p /opt/venv
 
