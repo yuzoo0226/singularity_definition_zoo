@@ -9,7 +9,7 @@ tensorboard
 numpy
 git+https://github.com/facebookresearch/segment-anything.git
 gradio
-opencv-python
+# opencv-python
 matplotlib
 pyyaml
 av
