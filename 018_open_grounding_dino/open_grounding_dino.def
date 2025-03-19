@@ -62,15 +62,11 @@ Stage: build
     . /opt/venv/bin/activate && \
     pip install --upgrade pip setuptools wheel
 
-    # 必要なパッケージをインストール (例としてnumpyとpandas)
-    . /opt/venv/bin/activate && \
-    pip install numpy pandas
-
     /opt/venv/bin/pip install dearpygui
     /opt/venv/bin/pip install -r requirements.txt
     /opt/venv/bin/pip install tqdm
     # /opt/venv/bin/pip install git+https://github.com/minghanqin/segment-anything-langsplat.git
-    /opt/venv/bin/pip install torch==2.1.0 torchvision==0.16.0 torchaudio==2.1.0 --index-url https://download.pytorch.org/whl/cu118
+    # /opt/venv/bin/pip install torch==2.1.0 torchvision==0.16.0 torchaudio==2.1.0 --index-url https://download.pytorch.org/whl/cu118
     # /opt/venv/bin/pip install git+https://github.com/openai/CLIP.git
     # /opt/venv/bin/pip install "git+https://github.com/facebookresearch/pytorch3d.git@stable"
     # # /opt/venv/bin/pip install git+https://github.com/minghanqin/langsplat-rasterization.git
