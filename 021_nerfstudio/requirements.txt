@@ -5,4 +5,3 @@ scikit-learn==1.6.1
 plyfile==1.1
 loguru==0.7.3
 ninja
-nerfstudio

@@ -68,6 +68,10 @@ Stage: build
     pip install --upgrade pip setuptools wheel
 
     /opt/venv/bin/pip install -r requirements.txt
+    /opt/venv/bin/pip install git+https://github.com/kerrj/lerf.git@f1c7832d8fd488423aa2e9e69a23160d31c4332c
+    /opt/venv/bin/pip install nerfstudio==0.3.1
+    /opt/venv/bin/pip install numpy==1.24.3
+    /opt/venv/bin/pip install tyro==0.6.6
     /opt/venv/bin/pip install torch==2.1.2+cu118 torchvision==0.16.2+cu118 --extra-index-url https://download.pytorch.org/whl/cu118
     # /opt/venv/bin/pip install git+https://github.com/NVlabs/tiny-cuda-nn/#subdirectory=bindings/torch
 
@@ -75,6 +79,9 @@ Stage: build
     ln -sf /opt/venv/bin/python /usr/bin/python
     ln -sf /opt/venv/bin/pip3 /usr/bin/pip3
     ln -sf /opt/venv/bin/pip3 /usr/bin/pip
+
+    # 動作未確認
+    # ns-install-cli
 
     echo ". /opt/venv/bin/activate" >> /entrypoint.sh
 
