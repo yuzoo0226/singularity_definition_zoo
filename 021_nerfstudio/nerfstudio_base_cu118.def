@@ -51,6 +51,7 @@ Stage: build
     DEBIAN_FRONTEND=noninteractive apt update && apt install -y qtbase5-dev qtchooser qt5-qmake qtbase5-dev-tools
     DEBIAN_FRONTEND=noninteractive apt update && apt install -y x11-apps
     DEBIAN_FRONTEND=noninteractive apt update && apt install -y jupyter-core jupyter-notebook
+    DEBIAN_FRONTEND=noninteractive apt update && apt install -y ffmpeg
 
     DEBIAN_FRONTEND=noninteractive apt update && apt install -y libxcb-cursor0
     DEBIAN_FRONTEND=noninteractive apt update && apt install -y libxcb-xinerama0 libxcb-icccm4 libxcb-image0 \
