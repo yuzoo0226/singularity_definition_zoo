@@ -46,7 +46,21 @@ apptainer shell --nv ~/usr/env/sandbox_lerf_cu118
 
 ### How to use lerf
 
+#### Train
+
 ```bash
 git clone https://github.com/nerfstudio-project/nerfstudio.git
 ns-train lerf --data data/nerfstudio/poster
+```
+
+#### Render
+
+```bash
+ns-render camera-path --load-config outputs/figurines/lerf-lite/2025-03-25_161604/config.yml --camera-path-filename ~/usr/splat_ws/baseline/nerfstudio_lerf/eval_iou_path.json --output-path renders/figurines/eval_iou_path/ --output-format images --rendered-output-names relevancy_0 --image-format png
+```
+
+#### Use custome data
+
+```bash
+ns-process-data images --data /mnt/home/yuga-y/usr/splat_ws/datasets/3d_ovs/sofa/images --output-dir /mnt/home/yuga-y/usr/splat_ws/datasets/lerf_3d_ovs/sofa --no-gpu
 ```

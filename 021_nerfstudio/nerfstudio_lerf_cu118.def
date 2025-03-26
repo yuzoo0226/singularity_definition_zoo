@@ -52,6 +52,7 @@ Stage: build
     DEBIAN_FRONTEND=noninteractive apt update && apt install -y x11-apps
     DEBIAN_FRONTEND=noninteractive apt update && apt install -y jupyter-core jupyter-notebook
     DEBIAN_FRONTEND=noninteractive apt update && apt install -y ffmpeg
+    DEBIAN_FRONTEND=noninteractive apt update && apt install -y colmap
 
     DEBIAN_FRONTEND=noninteractive apt update && apt install -y libxcb-cursor0
     DEBIAN_FRONTEND=noninteractive apt update && apt install -y libxcb-xinerama0 libxcb-icccm4 libxcb-image0 \
@@ -74,7 +75,7 @@ Stage: build
     # /opt/venv/bin/pip install nerfstudio==0.3.1
     /opt/venv/bin/pip install numpy==1.24.3
     /opt/venv/bin/pip install tyro==0.6.6
-    /opt/venv/bin/pip install viser==0.0.13
+    /opt/venv/bin/pip install viser==0.1.13
     /opt/venv/bin/pip install torch==2.1.2+cu118 torchvision==0.16.2+cu118 --extra-index-url https://download.pytorch.org/whl/cu118
     /opt/venv/bin/pip install git+https://github.com/NVlabs/tiny-cuda-nn/#subdirectory=bindings/torch
 
