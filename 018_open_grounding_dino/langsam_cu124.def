@@ -12,7 +12,7 @@ Stage: build
     # files ファイルのマウント
     ############################################
     ./entrypoint.sh /
-    ./requirements.txt /
+    ./requirements_langsam.txt /
 
 %environment
     ############################################
@@ -39,35 +39,26 @@ Stage: build
 
     # venvに切り替え
     DEBIAN_FRONTEND=noninteractive apt update && apt install -y \
-        python3.11 \
-        python3.11-venv \
-        python3.11-dev \
+        python3.10 \
+        python3.10-venv \
+        python3.10-dev \
         python3-pip \
         build-essential \
         git \
         wget && \
         apt clean && rm -rf /var/lib/apt/lists/*
 
-    DEBIAN_FRONTEND=noninteractive apt update && apt install -y qtbase5-dev qtchooser qt5-qmake qtbase5-dev-tools
-    DEBIAN_FRONTEND=noninteractive apt update && apt install -y x11-apps
-    DEBIAN_FRONTEND=noninteractive apt update && apt install -y jupyter-core jupyter-notebook
-
     # 仮想環境のディレクトリを作成
     mkdir -p /opt/venv
 
     # 仮想環境を作成
-    python3.11 -m venv /opt/venv
+    python3.10 -m venv /opt/venv
 
     # 仮想環境を有効化してpipをアップグレード
     . /opt/venv/bin/activate && \
     pip install --upgrade pip setuptools wheel
 
-    /opt/venv/bin/pip install dearpygui
-    /opt/venv/bin/pip install -r requirements.txt
-    /opt/venv/bin/pip install tqdm
-
-    /opt/venv/bin/pip install torch==2.4.1 torchvision==0.19.1 --extra-index-url https://download.pytorch.org/whl/cu124
-    /opt/venv/bin/pip install -U git+https://github.com/luca-medeiros/lang-segment-anything.git
+    /opt/venv/bin/pip install -r requirements_langsam.txt
 
     ln -sf /opt/venv/bin/python3 /usr/bin/python3
     ln -sf /opt/venv/bin/python /usr/bin/python
