@@ -1,0 +1,6 @@
+# based on 3D-OVS
+tqdm
+numpy==1.24.3
+scikit-learn==1.6.1
+plyfile==1.1
+loguru==0.7.3
