@@ -2,7 +2,10 @@
 tqdm
 numpy==1.24.3
 empy=3.3.4
+rospkg=1.6.0
 catkin_pkg=1.0.0
+opencv-python=4.2.0.32
+
 # scikit-learn==1.6.1
 # plyfile==1.1
 # loguru==0.7.3
