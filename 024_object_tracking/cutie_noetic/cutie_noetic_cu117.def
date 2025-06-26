@@ -72,6 +72,7 @@ Stage: build
     echo source /opt/ros/noetic/setup.bash >> /entrypoint.sh
 
     DEBIAN_FRONTEND=noninteractive apt install -y python3-pip
+    DEBIAN_FRONTEND=noninteractive apt install -y python3-empy
     DEBIAN_FRONTEND=noninteractive apt install -y build-essential libssl-dev libffi-dev python3-dev
 
     # 仮想環境のディレクトリを作成
