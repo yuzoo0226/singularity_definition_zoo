@@ -1,0 +1,6 @@
+tqdm
+numpy==1.24.3
+empy==3.3.4
+rospkg==1.6.0
+catkin_pkg==1.0.0
+opencv-python==4.10.0.82
