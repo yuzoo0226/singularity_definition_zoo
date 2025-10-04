@@ -88,6 +88,23 @@ Stage: build
     # rm -rf ndt_omp
 
     # finalize
+
+    # for ubuntu22
+    DEBIAN_FRONTEND=noninteractive apt install -y build-essential manpages-dev
+    DEBIAN_FRONTEND=noninteractive apt install -y gawk bison
+
+    cd /
+
+    wget http://ftp.gnu.org/gnu/libc/glibc-2.34.tar.gz
+    tar -xvzf glibc-2.34.tar.gz
+    cd glibc-2.34
+
+    mkdir build
+    cd build
+    ../configure --prefix=/opt/glibc-2.34
+    make -j6
+    make install
+
     rm -rf /var/lib/apt/lists/*
 
 
