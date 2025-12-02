@@ -1,2 +1,3 @@
 # Singularity  
 *.sif
+*/sandbox_*
